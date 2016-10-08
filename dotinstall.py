@@ -148,15 +148,43 @@ print "%d and %f" %(a,b)
 
 # -14- #
 #条件分岐 if
+#比較演算子 > < >= <= == !=
+#論理演算子 and or not
 score = 70
-if score > 60:
+# if score > 60 and score < 80:
+if 60 < score < 80:
     print "ok!"
     print "OK!"
 
+# -15- #
+#条件分岐 if
+score = 45
+if score > 60:
+    print "ok"
+elif score > 40:
+    print "soso"
+else:
+    print "ng"
+print "OK" if score > 60 else "NG"
 
-
-    # -15- #
 # -16- #
+#for ループ
+sales = [13, 32, 21, 238]
+sum = 0
+for sale in sales:
+    sum += sale
+else:
+    print sum
+# continue break
+for i in range(10):
+    if i == 3:
+        continue
+    if i == 7:
+        break
+    print i
+
+
+
 # -17- #
 # -18- #
 # -19- #
