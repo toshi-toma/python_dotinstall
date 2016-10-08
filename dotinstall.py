@@ -183,13 +183,89 @@ for i in range(10):
         break
     print i
 
-
-
 # -17- #
+# for ループ
+user = {"taguchi":200, "fkoji":300, "dotinstall":500}
+for key, value in user.iteritems():
+    print "key: %s value: %d" %(key, value)
+for key in user.iterkeys():
+    print key
+for value in user.itervalues():
+    print value
+
 # -18- #
+#while ループ
+n = 0
+while n < 10:
+    if n == 3:
+        n += 1
+        continue
+    if n == 7:
+        break
+    print n
+    n += 1
+else:
+    print "end"
+
 # -19- #
+#関数
+#引数
+#返り値
+def hello(name, num = 3):
+    return " hello %s" %name * num
+hello(num = 3, name = "steve")
+s = hello("tom", 2)
+print s
+
 # -20- #
+#変数のスコープ
+name = "taguchi"
+def hello():
+    name = "fkoji"
+print name
+#pass
+def hello2():
+    pass
+
 # -21- #
+#リスト <> 関数 map
+#無名関数 lambda
+def double(x):
+    return x * x
+print map(double,[2, 5, 8])
+print map(lambda x:x * x,[2, 5, 8])
+
 # -22- #
+#オブジェクト(変数と関数をまとめたもの)
+# クラス：オブジェクトの設計図
+# インスタンス：クラスを実体化したもの
+class User(object):
+    def __init__(self, name):
+        self.name = name
+    def greet(self):
+        print "my name is %s" %self.name
+
+bob = User("Bob")
+tom = User("Tom")
+print bob.name
+bob.greet()
+tom.greet()
+
 # -23- #
+#継承
+class SuperUser(User):
+    def shout(self):
+        print "%s is SUPPER!!" %self.name
+bob = User("Bob")
+tom = SuperUser("Tom")
+bob.greet()
+tom.shout()
+
 # -24- #
+#モジュール
+import math, random
+from datetime import date
+print date.today()
+print math.ceil(5.2)
+for i in range(5):
+    print random.random()
